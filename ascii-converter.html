@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Converter - Text, Hex, Decimal, Binary</title>
+    <meta name="description" content="Convert text to ASCII, Hexadecimal, Decimal, and Binary codes instantly. Essential tool for data encoding and programming.">
+    <link rel="stylesheet" href="style.css">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5575593207285711"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="ad-placement-side-left">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-5575593207285711"
+             data-ad-slot="YOUR_LEFT_AD_SLOT_ID"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <h1>ASCII Code Converter</h1>
+        <p>Convert standard text to ASCII codes in Hexadecimal, Decimal, and Binary formats.</p>
+
+        <div class="input-group">
+            <label for="textInput">Text / ASCII Characters</label>
+            <textarea id="textInput" rows="4" placeholder="Enter text here (e.g., Hello World)"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="hexInput">Hexadecimal ASCII (Separated by Spaces)</label>
+            <textarea id="hexInput" rows="4" placeholder="e.g., 48 65 6C 6C 6F 20 57 6F 72 6C 64"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="decInput">Decimal ASCII (Separated by Spaces)</label>
+            <textarea id="decInput" rows="4" placeholder="e.g., 72 101 108 108 111 32 87 111 114 108 100"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="binInput">Binary ASCII (Separated by Spaces)</label>
+            <textarea id="binInput" rows="4" placeholder="e.g., 01001000 01100101 01101100 ..."></textarea>
+        </div>
+        
+        <section class="content-section">
+            <h2>Understanding the ASCII Standard</h2>
+            <p>ASCII (American Standard Code for Information Interchange) is a fundamental character encoding standard that assigns unique numerical values to 128 characters, including control characters, punctuation, and letters. This standardization ensures that text can be consistently transmitted and interpreted across different digital devices and operating systems.</p>
+            
+            <h3>Why Convert Text to Hex and Decimal?</h3>
+            <p>While computers work natively with **Binary**, programmers often use **Hexadecimal** as a compact, human-readable representation of data bytes. Each character of text is one byte (or 8 bits), which corresponds to two hexadecimal digits. Converting ASCII text to its Hex or Decimal equivalent is common practice in areas like network programming, cybersecurity (for viewing packet headers), and embedded systems development.</p>
+
+            <h3>How the Conversion Works</h3>
+            <ol>
+                <li>**Text to Decimal:** Each character in the text string is looked up against the standard ASCII table to find its Decimal (Base 10) value.</li>
+                <li>**Decimal to Hex/Binary:** The resulting Decimal value is then converted to Base 16 (Hexadecimal) or Base 2 (Binary) using standard number base conversion rules.</li>
+                <li>**Code to Text:** The converter also works in reverse: by taking a space-separated list of Hex, Decimal, or Binary codes, it reconstructs the original ASCII text.</li>
+            </ol>
+        </section>
+        
+    </div>
+
+    <footer class="site-footer">
+        <a href="/">Base Converter</a> | 
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/about.html">About</a> | 
+        <a href="/contact.html">Contact</a>
+    </footer>
+    
+    <div class="ad-placement-side-right">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-5575593207285711"
+             data-ad-slot="YOUR_RIGHT_AD_SLOT_ID"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <script src="ascii-script.js"></script>
+    
+</body>
+</html>

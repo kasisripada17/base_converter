@@ -3,11 +3,10 @@ body {
     background-color: #f4f7f6;
     color: #333;
     display: flex;
-    /* Use column direction to stack content and footer */
+    /* Use column to stack content and footer */
     flex-direction: column;
     /* Center the container horizontally */
     align-items: center; 
-    /* Start content near the top */
     justify-content: flex-start;
     padding: 20px;
     min-height: 100vh;
@@ -20,10 +19,10 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    /* Reverted to narrow, centered layout */
+    /* Max width for the centered column */
     max-width: 500px;
     margin-top: 50px;
-    margin-bottom: 30px; /* Space before the footer */
+    margin-bottom: 30px; 
 }
 
 h1 {
@@ -35,7 +34,7 @@ h1 {
 p {
     text-align: center;
     color: #666;
-    /* Reduced margin-bottom to close the header gap */
+    /* Reduced margin-bottom to close the header gap (on index.html) */
     margin-bottom: 10px; 
 }
 
@@ -50,6 +49,7 @@ label {
     color: #333;
 }
 
+/* Base styles for single-line inputs */
 input[type="text"] {
     width: 100%;
     padding: 12px;
@@ -71,7 +71,27 @@ input[type="text"].error {
     background-color: #ffeaea;
 }
 
-/* Added Content and Footer Styles (Essential for AdSense) */
+/* --- FIX FOR ASCII PAGE: Textarea styles to match input fields --- */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    /* The FIX: Set a shorter default height */
+    min-height: 80px; 
+    resize: vertical; 
+    font-family: inherit;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* --- Content Section Styles (For AdSense) --- */
 .content-section {
     margin-top: 40px;
     padding-top: 20px;
@@ -92,6 +112,30 @@ input[type="text"].error {
     line-height: 1.6;
 }
 
+/* --- Navigation Link Style (Below main tool) --- */
+.tool-link {
+    text-align: center;
+    margin: 10px 0 25px 0; 
+}
+
+.tool-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.tool-link a:hover {
+    background-color: #e6f0ff;
+    text-decoration: underline;
+}
+
+/* --- Footer Styles --- */
 .site-footer {
     width: 100%;
     max-width: 500px; /* Match container width */
@@ -111,29 +155,47 @@ input[type="text"].error {
     text-decoration: underline;
 }
 
-/* --- SIDE AD STYLES (New) --- */
+/* --- SIDE AD STYLES (Desktop only) --- */
 .ad-placement-side-left,
 .ad-placement-side-right {
-    position: fixed; /* Keeps the ads in view as the user scrolls */
+    position: fixed; 
     top: 100px;
     width: 160px; 
     height: 600px; 
-    display: none; /* Hidden by default (especially on mobile) */
+    display: none; 
     z-index: 100;
 }
 
-/* Media Query to show side ads on large screens (desktop) */
 @media (min-width: 1000px) {
     .ad-placement-side-left,
     .ad-placement-side-right {
         display: block;
     }
-    /* Calculation: Center (50%) - Half Container (250px) - Ad Width (160px) - Gap (20px) */
+    /* Left Ad positioning */
     .ad-placement-side-left {
         left: calc(50% - 250px - 160px - 20px); 
     }
+    /* Right Ad positioning */
     .ad-placement-side-right {
-        /* Calculation: Center (50%) + Half Container (250px) + Gap (20px) */
         right: calc(50% - 250px - 160px - 20px);
     }
+}
+/* --- FIX: Styles for Textarea elements (used in the ASCII Converter) --- */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    /* This line sets the shorter default height */
+    min-height: 80px; 
+    resize: vertical; 
+    font-family: inherit;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
