@@ -3,8 +3,12 @@ body {
     background-color: #f4f7f6;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    /* Use column direction to stack content and footer */
+    flex-direction: column;
+    /* Center the container horizontally */
+    align-items: center; 
+    /* Start content near the top */
+    justify-content: flex-start;
     padding: 20px;
     min-height: 100vh;
     margin: 0;
@@ -16,8 +20,10 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
+    /* Reverted to narrow, centered layout */
     max-width: 500px;
     margin-top: 50px;
+    margin-bottom: 30px; /* Space before the footer */
 }
 
 h1 {
@@ -29,7 +35,8 @@ h1 {
 p {
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
+    /* Reduced margin-bottom to close the header gap */
+    margin-bottom: 10px; 
 }
 
 .input-group {
@@ -49,7 +56,7 @@ input[type="text"] {
     border: 2px solid #ccc;
     border-radius: 6px;
     font-size: 1.1em;
-    box-sizing: border-box; /* Important for padding and width calculation */
+    box-sizing: border-box; 
     transition: border-color 0.3s;
 }
 
@@ -62,4 +69,71 @@ input[type="text"]:focus {
 input[type="text"].error {
     border-color: #dc3545;
     background-color: #ffeaea;
+}
+
+/* Added Content and Footer Styles (Essential for AdSense) */
+.content-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: left; 
+}
+
+.content-section h2, .content-section h3 {
+    color: #007bff;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    text-align: left;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.site-footer {
+    width: 100%;
+    max-width: 500px; /* Match container width */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.site-footer a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- SIDE AD STYLES (New) --- */
+.ad-placement-side-left,
+.ad-placement-side-right {
+    position: fixed; /* Keeps the ads in view as the user scrolls */
+    top: 100px;
+    width: 160px; 
+    height: 600px; 
+    display: none; /* Hidden by default (especially on mobile) */
+    z-index: 100;
+}
+
+/* Media Query to show side ads on large screens (desktop) */
+@media (min-width: 1000px) {
+    .ad-placement-side-left,
+    .ad-placement-side-right {
+        display: block;
+    }
+    /* Calculation: Center (50%) - Half Container (250px) - Ad Width (160px) - Gap (20px) */
+    .ad-placement-side-left {
+        left: calc(50% - 250px - 160px - 20px); 
+    }
+    .ad-placement-side-right {
+        /* Calculation: Center (50%) + Half Container (250px) + Gap (20px) */
+        right: calc(50% - 250px - 160px - 20px);
+    }
 }
