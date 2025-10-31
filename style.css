@@ -199,3 +199,56 @@ textarea:focus {
     border-color: #007bff;
     outline: none;
 }
+/* --- IP Converter Specific Styles --- */
+/* --- IP Converter Specific Styles --- */
+.ip-input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px; /* Space between inputs/dots */
+}
+
+.ip-input-group input[type="text"] {
+    /* Ensures each octet input takes roughly 1/4 of the available space */
+    flex-grow: 1; 
+    text-align: center; /* Center the numbers */
+    padding: 10px 5px; /* Slightly reduced horizontal padding */
+    max-width: 25%; /* Limits growth to prevent excessive size */
+}
+
+.ip-input-group .dot {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Ensure read-only fields look clean but different */
+.ip-input-group input[readonly] {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+.converter-nav-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap to the next line on small screens */
+    justify-content: center; /* Centers the whole group */
+    gap: 10px; /* Space between the link buttons */
+    margin: 20px 0 30px 0; /* Provides clean spacing below the main tool */
+}
+
+/* Style for the link buttons inside the group (reused from tool-link style) */
+.converter-nav-group a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.converter-nav-group a:hover {
+    background-color: #e6f0ff;
+    text-decoration: none;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv4 Address Converter: Decimal, Binary, Hex</title>
+    <meta name="description" content="Convert IPv4 addresses instantly between dotted-decimal, binary, and hexadecimal formats. Essential for networking, subnetting, and system administration.">
+    <link rel="stylesheet" href="style.css">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5575593207285711"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="ad-placement-side-left">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-5575593207285711"
+             data-ad-slot="YOUR_LEFT_AD_SLOT_ID"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <h1>IPv4 Address Converter</h1>
+        <p>Enter the IP address in Decimal, Binary, or Hexadecimal format to convert instantly.</p>
+
+        <div class="input-group">
+            <label>Decimal (Dotted-Decimal)</label>
+            <div class="ip-input-group" data-base="10">
+                <input type="text" id="decInput1" data-octet="1" placeholder="192">
+                <span class="dot">.</span>
+                <input type="text" id="decInput2" data-octet="2" placeholder="168">
+                <span class="dot">.</span>
+                <input type="text" id="decInput3" data-octet="3" placeholder="1">
+                <span class="dot">.</span>
+                <input type="text" id="decInput4" data-octet="4" placeholder="1">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <label>Binary (8-Bit)</label>
+            <div class="ip-input-group" data-base="2">
+                <input type="text" id="binInput1" data-octet="1" placeholder="11000000">
+                <span class="dot">.</span>
+                <input type="text" id="binInput2" data-octet="2" placeholder="10101000">
+                <span class="dot">.</span>
+                <input type="text" id="binInput3" data-octet="3" placeholder="00000001">
+                <span class="dot">.</span>
+                <input type="text" id="binInput4" data-octet="4" placeholder="00000001">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Hexadecimal (2-Digit)</label>
+            <div class="ip-input-group" data-base="16">
+                <input type="text" id="hexInput1" data-octet="1" placeholder="C0">
+                <span class="dot">.</span>
+                <input type="text" id="hexInput2" data-octet="2" placeholder="A8">
+                <span class="dot">.</span>
+                <input type="text" id="hexInput3" data-octet="3" placeholder="01">
+                <span class="dot">.</span>
+                <input type="text" id="hexInput4" data-octet="4" placeholder="01">
+            </div>
+        </div>
+        
+        <section class="content-section">
+            <h2>Understanding IPv4 Address Conversion</h2>
+            <p>Every device connected to the internet uses an Internet Protocol (IP) address to uniquely identify itself. The most common format is IPv4, which consists of 32 bits, divided into four 8-bit sections called **octets**.</p>
+            
+            <h3>Why is Conversion Necessary?</h3>
+            <p>Although humans read IP addresses in dotted-decimal format (e.g., 192.168.1.1), networking hardware (routers, switches) processes them as **binary** streams. The conversion to binary is fundamental to understanding subnetting, network masks, and routing protocols.  The Decimal to Binary Rule: Each octet must be converted independently. Because an octet is 8 bits, the minimum decimal value is 0 ($00000000_2$) and the maximum is 255 ($11111111_2$). The conversion involves ensuring the binary representation is always padded with leading zeros to maintain exactly 8 bits. </p>
+
+            <h3>Hexadecimal IP Addresses</h3>
+            <p>Hexadecimal (Base 16) is a compact way to represent the 32-bit address. Each 8-bit octet is represented by two hexadecimal digits (00 to FF). Hex is often used in hardware documentation or when writing firewall rules due to its brevity compared to the 32-digit binary string.</p>
+        </section>
+        </div>
+
+    <footer class="site-footer">
+        <a href="/">Base Converter</a> | 
+        <a href="/ascii-converter.html">ASCII Converter</a> |
+        <a href="/color-converter.html">Color Converter</a> |
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/about.html">About</a> | 
+        <a href="/contact.html">Contact</a>
+    </footer>
+    
+    <div class="ad-placement-side-right">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-5575593207285711"
+             data-ad-slot="YOUR_RIGHT_AD_SLOT_ID"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <script src="ip-script.js"></script>
+</body>
+</html>
