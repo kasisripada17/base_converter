@@ -47,10 +47,14 @@ label {
     margin-bottom: 8px;
     font-weight: bold;
     color: #333;
+    /* Base style for labels */
+    text-align: left; 
 }
 
 /* Base styles for single-line inputs */
-input[type="text"] {
+input[type="text"],
+input[type="number"],
+select {
     width: 100%;
     padding: 12px;
     border: 2px solid #ccc;
@@ -60,18 +64,21 @@ input[type="text"] {
     transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
     border-color: #007bff;
     outline: none;
 }
 
 /* Style for error feedback */
-input[type="text"].error {
+input[type="text"].error,
+input[type="number"].error {
     border-color: #dc3545;
     background-color: #ffeaea;
 }
 
-/* --- FIX FOR ASCII PAGE: Textarea styles to match input fields --- */
+/* --- Textarea styles (used in the ASCII Converter) --- */
 textarea {
     width: 100%;
     padding: 12px;
@@ -80,7 +87,6 @@ textarea {
     font-size: 1.1em;
     box-sizing: border-box; 
     transition: border-color 0.3s;
-    /* The FIX: Set a shorter default height */
     min-height: 80px; 
     resize: vertical; 
     font-family: inherit;
@@ -112,13 +118,16 @@ textarea:focus {
     line-height: 1.6;
 }
 
-/* --- Navigation Link Style (Below main tool) --- */
-.tool-link {
-    text-align: center;
-    margin: 10px 0 25px 0; 
+/* --- Navigation Link Group Style --- */
+.converter-nav-group {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    margin: 20px 0 30px 0; 
 }
 
-.tool-link a {
+.converter-nav-group a {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
@@ -130,9 +139,9 @@ textarea:focus {
     display: inline-block;
 }
 
-.tool-link a:hover {
+.converter-nav-group a:hover {
     background-color: #e6f0ff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* --- Footer Styles --- */
@@ -180,40 +189,21 @@ textarea:focus {
         right: calc(50% - 250px - 160px - 20px);
     }
 }
-/* --- FIX: Styles for Textarea elements (used in the ASCII Converter) --- */
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    font-size: 1.1em;
-    box-sizing: border-box; 
-    transition: border-color 0.3s;
-    /* This line sets the shorter default height */
-    min-height: 80px; 
-    resize: vertical; 
-    font-family: inherit;
-}
 
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-/* --- IP Converter Specific Styles --- */
+
 /* --- IP Converter Specific Styles --- */
 .ip-input-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5px; /* Space between inputs/dots */
+    gap: 5px; 
 }
 
 .ip-input-group input[type="text"] {
-    /* Ensures each octet input takes roughly 1/4 of the available space */
     flex-grow: 1; 
-    text-align: center; /* Center the numbers */
-    padding: 10px 5px; /* Slightly reduced horizontal padding */
-    max-width: 25%; /* Limits growth to prevent excessive size */
+    text-align: center; 
+    padding: 10px 5px; 
+    max-width: 25%; 
 }
 
 .ip-input-group .dot {
@@ -222,33 +212,137 @@ textarea:focus {
     font-size: 1.2em;
 }
 
-/* Ensure read-only fields look clean but different */
 .ip-input-group input[readonly] {
     background-color: #f0f0f0;
     cursor: default;
 }
-.converter-nav-group {
+
+
+/* =================================================================
+   7. LOGIC GATES CALCULATOR STYLES (FIXED ALIGNMENT)
+   ================================================================= */
+
+.logic-inputs-outputs {
     display: flex;
-    flex-wrap: wrap; /* Allows links to wrap to the next line on small screens */
-    justify-content: center; /* Centers the whole group */
-    gap: 10px; /* Space between the link buttons */
-    margin: 20px 0 30px 0; /* Provides clean spacing below the main tool */
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-/* Style for the link buttons inside the group (reused from tool-link style) */
-.converter-nav-group a {
-    color: #007bff;
-    text-decoration: none;
+/* FIX: Use flexbox on the input/output groups to center the contents vertically and horizontally */
+.logic-input, .logic-output {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack label and input/result */
+    align-items: center; /* CENTER content horizontally */
+    text-align: center;
+}
+
+/* FIX: Ensure labels inside logic groups are centered */
+.logic-input label, .logic-output label {
+    text-align: center;
+}
+
+.logic-input input[type="number"] {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    height: 60px;
+    border: 2px solid #ccc;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.logic-input input[type="number"].active {
+    border-color: #28a745; 
+    color: #28a745;
+    background-color: #e8f9ed;
+}
+
+.logic-result {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 2em;
     font-weight: bold;
-    font-size: 1.05em;
-    padding: 8px 15px;
-    border: 1px solid #007bff;
+    border: 2px solid #ccc;
     border-radius: 6px;
-    transition: background-color 0.3s;
-    display: inline-block;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: all 0.3s;
 }
 
-.converter-nav-group a:hover {
+.logic-result.active {
+    border-color: #007bff; 
+    color: #007bff;
     background-color: #e6f0ff;
-    text-decoration: none;
+}
+
+/* Binary Output Display */
+.output-binary-section {
+    /* FIX: Align the entire section with the inputs above it by using max-width and margin auto */
+    max-width: 100%; 
+    margin: 15px auto 15px auto; /* Centers the dashed box if it were smaller */
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+}
+
+.output-binary-section p {
+    margin: 5px 0;
+}
+
+.output-binary-section span {
+    font-family: monospace;
+    font-size: 1.2em;
+    color: #dc3545; 
+    font-weight: bold;
+}
+
+.small-text {
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+/* Truth Table Styles */
+#truthTableContainer {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#truthTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#truthTable th, #truthTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+#truthTable thead th {
+    background-color: #f2f2f2;
+    color: #007bff;
+}
+
+/* --- MEDIA QUERIES (Responsiveness) --- */
+@media (max-width: 600px) {
+    .logic-inputs-outputs {
+        flex-direction: column;
+    }
+    .converter-nav-group {
+        flex-direction: column;
+    }
+    .converter-nav-group a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .container {
+        padding: 20px;
+    }
 }

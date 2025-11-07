@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwise Logic Gates Calculator - Decimal & Binary</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5575593207285711"
+         crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="ad-placement-side-left">
+        </div>
+
+    <div class="container">
+        <h1>Bitwise Logic Gates Calculator</h1>
+        <p>Perform bitwise operations (AND, OR, NOT, XOR) on decimal numbers (up to 255).</p>
+
+        <div class="input-group">
+            <label for="gateSelector">Select Bitwise Operation:</label>
+            <select id="gateSelector">
+                <option value="AND">Bitwise AND</option>
+                <option value="OR">Bitwise OR</option>
+                <option value="NOT">Bitwise NOT (One's Complement)</option>
+                <option value="XOR">Bitwise XOR</option>
+                <option value="NAND">Bitwise NAND</option>
+                <option value="NOR">Bitwise NOR</option>
+                <option value="XNOR">Bitwise XNOR</option>
+            </select>
+        </div>
+
+        <div class="logic-inputs-outputs">
+            <div class="input-group logic-input" id="inputAGroup">
+                <label for="inputA">Input A (Decimal: 0-255)</label>
+                <input type="number" id="inputA" value="0" min="0" max="255">
+            </div>
+            
+            <div class="input-group logic-input" id="inputBGroup">
+                <label for="inputB">Input B (Decimal: 0-255)</label>
+                <input type="number" id="inputB" value="0" min="0" max="255">
+            </div>
+            
+            <div class="input-group logic-output">
+                <label>Output Y (Decimal: 0-255)</label>
+                <div id="outputYDecimal" class="logic-result">0</div> 
+            </div>
+        </div>
+
+        <div class="output-binary-section">
+            <p><strong>Binary Output:</strong> <span id="outputYBinary">00000000</span></p>
+            <p class="small-text">Calculations are performed on the 8-bit (Byte) representation of the number.</p>
+        </div>
+        
+        <section class="content-section">
+            <h2>The Power of Bitwise Operations in Programming</h2>
+            <p>Bitwise operations are fundamental to low-level programming, used for tasks like managing flags in memory, encryption, network packet processing, and image manipulation. Unlike standard arithmetic operations, which treat numbers as a single value, bitwise operations treat them as a sequence of individual binary digits (bits).</p>
+            
+            <h3>Understanding Bitwise Logic</h3>
+            <p>When you perform a **Bitwise AND** on two decimal numbers, you are essentially AND-ing the corresponding bits of their binary representations. For instance, $5 (00000101_2)$ AND $3 (00000011_2)$ results in $1 (00000001_2)$. This is often used to mask (clear) specific bits.</p>
+
+            <h3>The Bitwise NOT Operator</h3>
+            <p>The **Bitwise NOT** operation, or one's complement, flips every single bit (0 becomes 1, and 1 becomes 0). For instance, the Bitwise NOT of $5 (00000101_2)$ results in $250 (11111010_2)$ when constrained to an 8-bit system. This operation is crucial in digital math for implementing two's complement and negation.</p>
+        </section>
+        </div>
+
+    <div class="ad-placement-side-right">
+        </div>
+    
+    <footer class="site-footer">
+        <a href="/">Home</a> | 
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/about.html">About</a> | 
+        <a href="/contact.html">Contact</a>
+    </footer>
+
+    <script src="logic-gates-script.js"></script>
+</body>
+</html>
